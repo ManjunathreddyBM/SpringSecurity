@@ -17,4 +17,9 @@ public class WelcomeController {
 	public String user() {
 		return "Hi User";
 	}
+	@GetMapping("/admin")
+	@PreAuthorize("hasRole('admin')")
+	public String admin() {
+		return "Hi Admin";
+	}
 }
